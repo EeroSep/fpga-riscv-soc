@@ -17,8 +17,8 @@
 // ---------------------------------------------------------------------
 //  Kello: 27 MHz kideoskillaattori
 // ---------------------------------------------------------------------
-//IO_LOC  "clk" 4;
-//IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC  "clk" 4;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 
 
 // ---------------------------------------------------------------------
@@ -49,9 +49,9 @@ IO_PORT "led[5]" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8;
 // ---------------------------------------------------------------------
 //  Napit S1 ja S2 (testaa polariteetti ensin, esim. ohjaa LEDiin)
 // ---------------------------------------------------------------------
-IO_LOC  "btn_s1" 88;
+//IO_LOC  "btn_s1" 88;
 //IO_LOC  "btn_s2" 87;
-IO_PORT "btn_s1" IO_TYPE=LVCMOS33;
+//IO_PORT "btn_s1" IO_TYPE=LVCMOS33;
 //IO_PORT "btn_s2" IO_TYPE=LVCMOS33;
 
 

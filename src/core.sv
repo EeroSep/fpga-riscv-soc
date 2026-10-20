@@ -2,7 +2,10 @@ module core
 import rv32i::*;
 (
     input logic clk,
-    input logic rst_n
+    input logic rst_n,
+    output logic [31:0] io_addr,    // store address (alu_result)
+    output logic [31:0] io_wdata,   // store data (rs2_data)
+    output logic io_we              // store enable
 );
 
     // PC
@@ -87,6 +90,11 @@ import rv32i::*;
         .mem_write_en(mem_write_en),
         .data_out(data_out)
     );
+
+    // Store bus out to main for memory-mapped IO
+    assign io_addr = alu_result;
+    assign io_wdata = rs2_data;
+    assign io_we = mem_write_en;
 
     branch_logic branch_logic(
         .rs1(rs1_data),
